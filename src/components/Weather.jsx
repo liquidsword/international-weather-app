@@ -20,7 +20,7 @@ const Weather = () => {
         })
           .then((res) => {
             console.log(res.data);
-            setTemp(res.data.main.temp);
+            setTemp(res.data.main.temp - 273.15);
             setIcon(res.data.weather[0].icon);
         })
           .catch((err) => {
@@ -42,14 +42,26 @@ const Weather = () => {
                 onChange={(e) => setCountry(e.target.value)}
                 placeholder="Countryname" 
             />
-            <button onClick={getWeatherData(city, country)} className="btn btn-primary">Get Weather</button>
+            <button 
+                onClick={() => getWeatherData(city, country)} 
+                className="btn btn-primary">
+                Get Weather
+            </button>
 
             <div className="data_container p-4 my-5">
-                <h1>{city}, {country}</h1>
+                <h1>
+                    {city}, {country}
+                </h1>
                 <div className="my-2">
-                    <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} 
-                    alt="weather-icon" style={{width:200, height:200}}/>
+                    <img 
+                     src={`http://openweathermap.org/img/wn/${icon}@2x.png`} 
+                     alt="weather-icon" 
+                     style={{width: 200, height: 200}}
+                    />
                 </div>
+                {temp ? <h1>{Math.floor(temp)}℃</h1> : null}
+                <h4 className="my-4">Min: <span>{Math.floor(min)}℃</span></h4>
+                {/* ℉ */}
             </div>
         </div>
     )
