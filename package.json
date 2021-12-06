@@ -1,0 +1,19 @@
+{
+  "name": "--yes",
+  "version": "1.0.0",
+  "description": "international-weather-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liquidsword/international-weather-app.git"
+  },
+  "author": "Auden Robertson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liquidsword/international-weather-app/issues"
+  },
+  "homepage": "https://github.com/liquidsword/international-weather-app#readme"
+}
