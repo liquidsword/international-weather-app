@@ -54,7 +54,8 @@ const Weather = () => {
                 Get Weather
             </button>
 
-            <div className="data_container p-4 my-5">
+            {showMyComponent ? (
+                <div className="data_container p-4 my-5">
                 <h1>
                     {city}, {country}
                 </h1>
@@ -71,7 +72,11 @@ const Weather = () => {
                 </h4>
                 
                 <h1>{description}</h1>
+                <h4 className="my-4">Date: {new Date().toLocaleDateString()}</h4>
             </div>
+            ) : null}
+
+            
         </div>
     )
 }
